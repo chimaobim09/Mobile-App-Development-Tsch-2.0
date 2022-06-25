@@ -1,7 +1,69 @@
 import 'dart:ffi';
 
 void main(List<String> arguments) {
-//X, Y, X+Y >10 - Print('Value is Valid) else Invalid Value
+  //String Processing - Strings are manipulated
+  String currency='NGN';
+  double principal=50000;
+  double rate = 0.4;
+  double time=3;
+
+  //SI= p*r*t/100;
+
+  double simpleInterest=principal*rate*time/100;
+  print(simpleInterest);
+  print(currency+simpleInterest.toString());
+  print("$currency$simpleInterest");
+  
+  String testValue='Ifeanyi Nwachukwu';
+  String email='onyakachi001@gmail.com';
+  String email2='INFO@TECHORIGIN.COM';
+  if(email.contains('.com') && email.contains('@')){
+    print('Email is VALID');
+  }
+  else{
+    print('Email is INVALID');
+  }
+ 
+  print(email.toUpperCase());
+  print(email2.toLowerCase());
+  bool startsWith=email.trim().toLowerCase().startsWith("info");
+  bool endsWith=email.trim().endsWith('.com');
+  print(startsWith);
+  print(endsWith);
+  print(email.length);
+  var index=email.indexOf('.com');
+  print(index);
+
+  int indexofat= email.indexOf('@');
+  int indexofcom= email.indexOf('.com');
+  String company= email.substring(indexofat+1,indexofcom);
+  print(company);
+  String name=email.substring(0,indexofat);
+  print(name.toUpperCase());
+  print(email.replaceAll('.com', '.net'));
+  print(email.replaceAll('gmail', 'ymail'));
+  print(email.replaceRange(indexofat, email.length, ''));
+
+  //Class-Work
+  //firstname - lastname - age ; firstname-lastname:age
+  //find everywhere that o is in your firstname and replace it with hello
+  //join firstname and lasname and extract the first 5 characters, last 4 characters and extract the first 4 characters after the 3rd index
+
+  String fname='onyekachi';
+  String lname='Nwachukwu';
+  int age=90;
+  print('$fname-$lname:$age');
+  print(fname+'-'+lname+':'+age.toString());
+  print(fname.replaceAll('o', 'Hello')+' $lname');
+  String fullname='$fname $lname';
+  print(fullname.substring(0,5));
+  print(fullname.substring(fullname.length-4));
+  print(fullname.substring(3,3+4));
+  print(fullname.replaceAll(fullname.substring(0,fullname.length-4), ''));
+}
+
+void classTwo(){
+  //X, Y, X+Y >10 - Print('Value is Valid) else Invalid Value
 
 //X, Y, Z if X+Y >10 , ADD 20 TO Z and print Z if X+Y ==3 add 5 to Z and print z, if X+Z-Y is less than 0 then then add 30 to z and print z;
 
@@ -13,7 +75,6 @@ void main(List<String> arguments) {
   } else if (X + Y < 10) {
     print('value is invalid');
   }
-  return;
 
   const int age = 55;
   //Age is between 0 - 9 - Child
