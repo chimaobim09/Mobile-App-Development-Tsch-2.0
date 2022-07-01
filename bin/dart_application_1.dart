@@ -1,6 +1,41 @@
 import 'dart:ffi';
 
 void main(List<String> arguments) {
+  //Creates a variable that holds the coursename, coursegrade, coursepoint,
+  //Create a List of student ages
+  //Create a map of total boys and total girls in a class
+
+
+  //sum david age 20 to Onyekachi age 30 to  joy age 40
+  //Divide based on integer the age of onyekachi and david
+  //Find the remainder of adding joy and davids age subtracted 
+  //from 15 divide by 12
+
+  int daviDAge=20;
+  int onyekachiAge=30;
+  int joyAge=40;
+  int sumOfAges=daviDAge+onyekachiAge+joyAge;
+  print('Sum of All Ages: $sumOfAges');
+  int intDivision=onyekachiAge~/daviDAge;
+  print('Integer Division: $intDivision');
+  //Method One
+  int remainder=(joyAge+daviDAge-15)%12;
+  print('Remainder: $remainder'); 
+  //Method Two
+  int addition=joyAge+daviDAge-15;
+  int remainder2=addition%12;
+
+  String coursename='Physics';
+  String coursegrade='B';
+  int coursepoint=1;
+
+  List<int> studentAges=[10,20,30];
+  Map<String,int> totalBoysMap={'totalboys':90};
+  Map<String,int> totalGirlsMap={'totalgirls':50};
+
+
+}
+void classThree(){
   //String Processing - Strings are manipulated
   String currency='NGN';
   double principal=50000;
@@ -61,7 +96,6 @@ void main(List<String> arguments) {
   print(fullname.substring(3,3+4));
   print(fullname.replaceAll(fullname.substring(0,fullname.length-4), ''));
 }
-
 void classTwo(){
   //X, Y, X+Y >10 - Print('Value is Valid) else Invalid Value
 
@@ -167,10 +201,10 @@ void classTwo(){
     ageGroup = AgeGroup.Aged;
   }
 }
-
 void classOne() {
   //Dart Variables and Data Types
   //Print Name, Print Age, Print Total Cost
+  String address;
   String name = 'Promise Enyichukwu';
   int age = 3000;
   double totalCost = 3000.50;
@@ -181,18 +215,21 @@ void classOne() {
     "UI/UX Development"
   ];
   List<int> ages = [10, 20, 70, 40];
-  Map<String, String> map = {"boy": "5"};
-
+  Map<String,String> joy={"address":"Eneka"};
+  Map<String, List<String>> map = {"address":[ "Eneka",'Rumuodara']};
   int xvalue = 90;
   int yvalue = 100;
   int zvalue = 70;
 
   // Data Operators
   int sumOfXnY = xvalue + yvalue; //addition operator
-  int divisionOfZnX = zvalue ~/ xvalue;
+  int subtractXnY=xvalue-yvalue;
 
   int multiplyXnYnZ = xvalue * yvalue * zvalue;
-  int remainderYFromX = yvalue % xvalue;
+  double divideXnY=xvalue/yvalue;//5/2 = 2.5
+
+  int divisionOfZnX = zvalue ~/ xvalue;// 5/2 = 2.89 ==3
+  int remainderYFromX = yvalue % xvalue;//13%10 = 3
 
   String fname = "David";
   String lname = "Asher";
