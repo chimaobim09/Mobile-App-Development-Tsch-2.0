@@ -1,6 +1,77 @@
 import 'dart:ffi';
 
 void main(List<String> arguments) {
+//Loops & Iterations
+//List Management
+
+//A process whereby an ~action~ is performed ~repeatedly~
+//Action is a procedure to solve a problem
+//Actions are algorithm that solves a particular problem
+//Components of Iteration
+    //Action
+    //Loop Control Variable (LCV) - Determines when the action should end
+    //End condition
+//for, foreach/for-in, do while, while
+// for (loop conditions -lcv) {
+//   Actions
+// }
+//do
+//{
+  // Actions
+//} while(condition)
+// Breaking or Ending and Iteration
+//>>> Continue - Iteration still continues only action is truncated
+//>>> Break  - Both Actions and Iterations are truncated
+//>>> Return - Actions, Iterations and Procedres are truncated
+//Create an Iteration for multiples of 1 to 100
+for (int i = 1; i <= 12; i++) {
+  print(i);
+}
+
+for (int i = 1; i <= 12; i++) {
+  for (int j = 1; j <= 12; j++) {
+    print('$i * $j = ${i*j}');
+  }
+}
+
+
+for (int i = 1; i <= 12; i++) {
+  print('Before continue $i');
+  continue;
+  print('After continue $i');
+}
+
+for (int i = 1; i <= 12; i++) {
+  print('Before continue $i');
+  break;
+  continue;
+  print('After continue $i');
+}
+
+List<String> names=["Onyekachi","David","Chuks","Nnamdi","Promise"];
+for (String name in names) {
+  print('$name is Present');
+}
+
+double bucketSize=20;
+double smallBucket=1.5;
+while(smallBucket<=bucketSize){
+  smallBucket+=1.5;
+  if (smallBucket<=bucketSize) {
+  print(smallBucket);
+}
+}
+
+do {
+  smallBucket+=1.5;
+  print(smallBucket);
+} while (smallBucket<=bucketSize);
+
+
+print('After Break');
+}
+void Revision(){
+  
   //Creates a variable that holds the coursename, coursegrade, coursepoint,
   //Create a List of student ages
   //Create a map of total boys and total girls in a class
@@ -270,3 +341,6 @@ void classOne() {
 }
 
 enum AgeGroup { Child, Adolescent, Adult, Aged }
+//mongodb+srv://padimi-dev:padimi-net2022@cluster0.qy2le.mongodb.net/padimidb?retryWrites=true&w=majority
+
+//mongodb+srv://padimi-dev:<password>@cluster0.qy2le.mongodb.net/?retryWrites=true&w=majority
