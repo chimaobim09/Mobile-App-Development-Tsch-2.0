@@ -1,101 +1,325 @@
 import 'dart:ffi';
 
+import 'user.dart';
+import 'user_service.dart';
+
 void main(List<String> arguments) {
+User user=User("David","onyeka@gmail.com","5678hh",90,IsDead: true);
+user.Height=90;
+user.Weight=10;
+user.toWalk();
 
-//Numeric
-//dataType variablename;
-//dataType variablename = assignedvalue
-
-//Declaration of variables
-int age=23;
-age=56;
-double amount=9000.50;
-num value=8200.70;
-
-
-//Non-Numeric
-String name='Chuks';
-name="Godspower";
-name='''jd''';
-
-
-//Boolean
-bool isMale=true;
-isMale=false;
-
-
-//List
-
-List<double> listVal=[20.65,70,55.3,90];
-List<String> stringVal=['Chimaobi','Asher','David'];
-
-//Maps
-Map<String,String> mapKeyValuePair={"Key":"Value"};
+var users=UserService.fetchAll();
+print(users);
+bool exists=UserService.checkIfUserExists(user.email);
+if(exists){
+  print("User already exists");
+}
+else{
+  UserService.addNewUser(user);
+  var users=UserService.fetchAll();
+  print(users);
+  print("User Created Successfully");
+}
 
 }
 
-void Revision2(){
+void sum(double param1, double param2, double param3){
+  print(param1+param2+param3);
+}
+
+void methodName(){
+  return;
+}
+
+void methodClass(){
   
-String document2 ='sn-customername-customerId||1-Chimobi-756765||2-David-6876576';
+//Methods are functions or routines that performs a particular operation
+//Return Type - Data Type -Variable
+//Create a Method that will sum three values passed to it
+//Create a method that will sum two values and multiply by the third value
+//Create a method that returns the sum of three values
+//Createa method that will return sum of two values multiplied by the third value
 
-String newString='david edafe@ gmail.com';
+  String variableName="";
+  LoginWithPin("ifeanyi@yahoo.com",pin: 46);
+  Login("ifeanyi@yahoo.com","paswword6789");
+  sum(8, 9, 10);
+}
 
-print(newString.replaceAll(' ', ''));
-print(newString.substring(5,12));
-//Remove all spaces
-//Replace david with junior
-//replace gmail.com with ymail.net
-//extract the 6th character to the 12th index
+void LoginWithPin(String email,{String password="",int pin=0}){
+  print("$email is logged In");
+  String loginProfile=LoginAndReturnProfile('ifeanyi@gmail.com', 1234);
+  print(loginProfile);
+}
 
-var dart = "Hello World, I'm Dart Language";
-print(dart.substring(1,9));
-var dart2=dart.substring(0,5);
-print(dart2);
-var dart3=dart.substring(dart.length -6);
-var dartall= dart2+dart3;
-print(dartall);
+void Login(String email,String password){
+  print("$email is logged In");
+  String loginProfile=LoginAndReturnProfile('ifeanyi@gmail.com', 1234);
+  print(loginProfile);
+}
 
-String follow='Hello,World,Dart,Language';
-List<String> separate=follow.split(',');
-print(separate[0]);
-print(separate[1]);
-print(separate[2]);
-print(separate[3]);
+String LoginAndReturnProfile(String email, int pin){
+  print("$email is logged In");
+  return "David's Profile";
+}
 
-
-
-
-
-
+String GetProfile(String email, String password){
+    String name='Chimobi';
+    String exp_email="chimobo@gmail.com";
+    String xp_password="Mosco123";
 
 
+    if(email==exp_email && password==xp_password){
+      return name;
+    }
+    else{
+        return "Login Error";
+    }
+}
 
 
+void Revision3() {
+  //1. Hello World, I'm Dart Language
+//-- Extract from the second index to the the 10th Character of
+//Join the First 6 character to the last 6 character
 
+//2. Split the following text by comma and print each items 'Hello,World,Dart,Language'
 
-String document='sn;name;age;phonenumber%1;ifeanyi;30;09878576786'; //, - Delimerter
+//3. Extract the First Two Elements of the splitted item in (2) above
+//
 
-List<String> separation=document.split('%');
-List<String> firstSeparation=separation[0].split(';');
-List<String> secondSeparation=separation[1].split(';');
-print(firstSeparation[0]);
-print(firstSeparation[1]);
-print(firstSeparation[2]);
-print(firstSeparation[3]);
-print(secondSeparation[0]);
-print(secondSeparation[1]);
-print(secondSeparation[2]);
-print(secondSeparation[3]);
+//Conditional Statement
+//Print all the numbers that is divisible by 3 from the list
+//[10,20,21,33,36,81,88,90,120,111]
+
+//Check for every number in the list above when added to 7 will give an even number
+
+//Think of a nested Conditional if statment of 3 degrees
+
+  var names = ['Chimobi', 'nadia', 'Asher', 'namdi', 'Ifeanyi'];
+  String chimobi = 'Chimobi';
+  print(chimobi[3]);
+  print(chimobi.substring(3));
+  print(chimobi.indexOf('o'));
+
+  print(names.length);
+  print(names.first);
+  print(names.last);
+  print(names.indexOf('Chimobi'));
+//LAMBDA
+  var items = names
+      .where((element) => element.contains('na') || element.startsWith('n'));
+  print(items);
+  print(names.firstWhere((element) => element.startsWith('n')));
+
+  var item = names.firstWhere((element) => element.startsWith('n'));
+  print(item);
+  var firstTwo = names.take(2);
+  print(names.lastWhere((element) => element.startsWith('n')));
+}
+
+void Revision2() {
+  for (int i = 9; i < 10; i++) {
+    print(i);
+  }
+  int integerValue;
+  List<String> names = ['Chimobi', 'David', 'Nnamdi'];
+
+  for (var element in names) {
+    print(element);
+  }
+  int iValue = 1;
+  print('has started');
+  while (iValue <= 12) {
+    print('Is Running');
+    iValue++;
+  }
+
+  do {
+    print('Is Running');
+    iValue++;
+  } while (iValue <= 24);
+}
+
+void classFive() {
+  List<String> items = ['Item One', 'Itm Two', 'Item Three', 'Itm Four'];
+  List<int> intItems = [1, 2, 4, 9, 7];
+  List<bool> boolItems = [true, false, false, true];
+
+  for (var i = 5; i > 0; i--) {
+    print(i);
+  }
+//List Dynamics
+//How Collections functions and responds to actions
+
+//A list/collection can be a collection of collections
+//Primitive Types - String, int, bool, double
+
+  List<List<String>> colOfCol = [
+    ["Item One", "Item Two"],
+    ["Item One", "Item Two"],
+  ];
+
+  List<List<List<int>>> colOfColofCol = [
+    [
+      [1, 2, 3]
+    ],
+  ];
+
+  int i = 1;
+  for (var item in colOfCol) {
+    print('List $i');
+    for (var element in item) {
+      print(element);
+    }
+    i++;
+  }
+
+  print("Initial Length ${items.length}");
+  print('Initial Items $items');
+  print(items[0]);
+  print(items[1]);
+  print(items.first);
+  print(items.last);
+  print(items.reversed);
+
+  items.add('New String');
+  print("New Length ${items.length}");
+  print('New Items $items');
+
+//CLASS WORK ONE
+//CREATE AN EMPTY LIST, RUN ITERATION FROM 1 TO 10, UPDATE THE LIST WITH THE VALUES FROM THE ITERATION, PRINT THE NEW LIST ITEMS AND THE TOTAL LENGTH
+
+//CREATE LIST
+  List<int> itemsList = [];
+  for (var i = 1; i <= 10; i++) {
+    itemsList.add(i);
+  }
+
+  print(itemsList.length);
+  print(itemsList);
+
+// List<int> newList=[11,12,13,14,15];
+  itemsList.addAll([11, 12, 13, 14, 15]);
+
+  print(itemsList.length);
+  print(itemsList);
+
+//CLASS WORK
+  List<int> initItems = [2, 4, 6, 8, 9, 10];
+//Add to this list all numbers between 80 and 120
+//Add to this list all even numbers between 80 and 120
+  for (var i = 80; i < 120; i++) {
+    if (i % 2 == 0) {
+      initItems.add(i);
+    }
+  }
+  print(initItems);
+
+//=> Such That- It helps in checking for conditions => Lamda Expression
+  var hasTwo = initItems.any((i) => i + 4 == 10);
+  print(hasTwo);
+
+  for (var element in initItems) {
+    if (element == 2) {
+      print(true);
+      break;
+    }
+  }
+  print(initItems.length);
+  initItems.clear();
+  print(initItems.length);
+  initItems.remove(2);
+  initItems.remove(10);
+  print(initItems);
+  initItems.removeAt(4);
+  initItems.removeAt(initItems.indexOf(90));
+  print(initItems);
+  print(initItems.elementAt(4));
+  int itemThatSatifiesConditin =
+      initItems.firstWhere((element) => element + 4 == 10);
+  print(itemThatSatifiesConditin);
+  var allItems = items.where((element) => element.contains('em'));
+  print(allItems);
+  initItems.removeRange(5, 10);
+  for (var element in initItems) {
+    print(element);
+  }
+
+  List<String> classes = [];
+}
+
+void classFour() {
+  //Loops & Iterations
+//List Management
+
+//A process whereby an ~action~ is performed ~repeatedly~
+//Action is a procedure to solve a problem
+//Actions are algorithm that solves a particular problem
+//Components of Iteration
+  //Action
+  //Loop Control Variable (LCV) - Determines when the action should end
+  //End condition
+//for, foreach/for-in, do while, while
+// for (loop conditions -lcv) {
+//   Actions
+// }
+//do
+//{
+  // Actions
+//} while(condition)
+// Breaking or Ending and Iteration
+//>>> Continue - Iteration still continues only action is truncated
+//>>> Break  - Both Actions and Iterations are truncated
+//>>> Return - Actions, Iterations and Procedres are truncated
+//Create an Iteration for multiples of 1 to 100
+  for (int i = 1; i <= 12; i++) {
+    print(i);
+  }
+
+  for (int i = 1; i <= 12; i++) {
+    for (int j = 1; j <= 12; j++) {
+      print('$i * $j = ${i * j}');
+    }
+  }
+
+  for (int i = 1; i <= 12; i++) {
+    print('Before continue $i');
+    continue;
+    print('After continue $i');
+  }
+
+  for (int i = 1; i <= 12; i++) {
+    print('Before continue $i');
+    break;
+    continue;
+    print('After continue $i');
+  }
+
+  List<String> names = ["Onyekachi", "David", "Chuks", "Nnamdi", "Promise"];
+  for (String name in names) {
+    print('$name is Present');
+  }
+
+  double bucketSize = 20;
+  double smallBucket = 1.5;
+  while (smallBucket <= bucketSize) {
+    smallBucket += 1.5;
+    if (smallBucket <= bucketSize) {
+      print(smallBucket);
+    }
+  }
+
+  do {
+    smallBucket += 1.5;
+    print(smallBucket);
+  } while (smallBucket <= bucketSize);
+
+  print('After Break');
 }
 
 void Revision() {
-  //Simple Interest Calculation
-  //SI = PRT/100, principal, rate, time
-
-  //SI > 10000 - PRINT HIGH INTEREST
-  //SI BETWEEN 5000 & 10000 - MID INTEREST RATE
-  //SI LESS 5000 - LOW INTEREST RATE
-
   //Creates a variable that holds the coursename, coursegrade, coursepoint,
   //Create a List of student ages
   //Create a map of total boys and total girls in a class
@@ -173,7 +397,6 @@ void classThree() {
   double principal = 50000;
   double rate = 0.4;
   double time = 3;
-  String convertedString=principal.toString();
   //SI= p*r*t/100;
 
   double simpleInterest = principal * rate * time / 100;
@@ -229,9 +452,6 @@ void classThree() {
 }
 
 void classTwo() {
-  //Logical Operators
-  //== - Assignment Operator, Mathematical Operators >, <, >=, <=, !=
-  //Logical Joining Operators - && ||
   //X, Y, X+Y >10 - Print('Value is Valid) else Invalid Value
 
 //X, Y, Z if X+Y >10 , ADD 20 TO Z and print Z if X+Y ==3 add 5 to Z and print z, if X+Z-Y is less than 0 then then add 30 to z and print z;
