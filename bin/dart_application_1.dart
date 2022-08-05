@@ -4,6 +4,18 @@ import 'user.dart';
 import 'user_service.dart';
 
 void main(List<String> arguments) {
+
+//Synchronous
+
+
+
+delayForFiveSeveconds();
+dontDelay();
+seconddontDelay();
+
+
+
+
 User user=User("David","onyeka@gmail.com","5678hh",90,IsDead: true);
 user.Height=90;
 user.Weight=10;
@@ -23,6 +35,17 @@ else{
 }
 
 }
+void dontDelay(){
+  print("I was not delayed");
+}
+void seconddontDelay(){
+  print("I was not delayed");
+}
+Future delayForFiveSeveconds() async {
+  await Future.delayed(Duration(seconds: 5));
+  print('Hello i was delayed for 5s');
+}
+
 
 void sum(double param1, double param2, double param3){
   print(param1+param2+param3);
