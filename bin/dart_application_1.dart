@@ -1,12 +1,22 @@
 import 'dart:ffi';
 
+import 'staffmodel.dart';
 import 'user.dart';
 import 'user_service.dart';
 
 void main(List<String> arguments) {
 
-//Synchronous
+var church=Church('name','address');
 
+//Synchronous
+var teachingStaff=TeachingStaffModel();
+teachingStaff.name='';
+teachingStaff.getName();
+
+
+
+var nonstaff1=NonTeachingStaffModel(); 
+var nonstaff2=NonTeachingStaffModel.init('Staff Name');
 
 
 delayForFiveSeveconds();
