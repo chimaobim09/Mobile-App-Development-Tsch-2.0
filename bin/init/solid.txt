@@ -1,0 +1,25 @@
+SOLID PRINCIPLES
+
+
+They are code principles that guard or guide the development and maintainability of code across multiple platforms and users specification.
+
+Advantages
+1. Extensibility: Can be easily extended
+2. Maintainability
+3. Easily Managed
+
+WHAT ARE THE PRINCIPLES
+
+S - SINGLE RESPONSIBILITY
+O - OPEN CLOSED
+L - LISKOV SUBSTITUTION
+I - INTERFACE SEGREGATION
+D - DEPENDENCY INJECTION
+
+
+
+MODEL VIEW VIEWMODEL (MVVM ARCHITECTURE)
+
+M - MODEL - DATA LOGIC / BUSINESS LOGIC
+V - VIEW
+VM - VIEWMODEL - LINK BETWEEN MODEL AND VIEW

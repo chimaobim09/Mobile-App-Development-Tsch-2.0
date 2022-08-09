@@ -1,21 +1,19 @@
 import 'dart:ffi';
-
-import 'staffmodel.dart';
-import 'user.dart';
-import 'user_service.dart';
-
+import 'init/staffmodel.dart';
+import 'init/user.dart';
+import 'init/user_service.dart';
 void main(List<String> arguments) {
 
 var church=Church('name','address');
 
 //Synchronous
-var teachingStaff=TeachingStaffModel();
+var teachingStaff=TeachingStaffModel('');
 teachingStaff.name='';
 teachingStaff.getName();
 
 
 
-var nonstaff1=NonTeachingStaffModel(); 
+var nonstaff1=NonTeachingStaffModel(''); 
 var nonstaff2=NonTeachingStaffModel.init('Staff Name');
 
 

@@ -1,5 +1,6 @@
 abstract class StaffModel{
-
+  StaffModel();
+  StaffModel.init(this.phoneNumber);
   String name='';
   String address='';
   String phoneNumber='';
@@ -10,6 +11,7 @@ abstract class StaffModel{
 }
 
 class TeachingStaffModel extends StaffModel{ 
+  TeachingStaffModel(super.phoneNumber):super.init();
   String classInCharge='';
   String totalStudents='';
   
@@ -20,8 +22,8 @@ class TeachingStaffModel extends StaffModel{
 }
 
 class NonTeachingStaffModel extends StaffModel{
-  NonTeachingStaffModel();
-  NonTeachingStaffModel.createByGoogle(String gmail);
+  NonTeachingStaffModel(super.phoneNumber):super.init();
+  NonTeachingStaffModel.createByGoogle(super.phoneNumber,String gmail):super.init();
   NonTeachingStaffModel.createByFacebook(String username);
   NonTeachingStaffModel.init(this.supportStaffName);
   String supportStaffName='';
