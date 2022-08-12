@@ -3,7 +3,10 @@ import 'init/staffmodel.dart';
 import 'init/user.dart';
 import 'init/user_service.dart';
 void main(List<String> arguments) {
-
+print(DateTime.now());
+var date=DateTime(2022,8,12);
+print("${date.year}-${date.month}-${date.day}");
+return;
 var church=Church('name','address');
 
 //Synchronous
