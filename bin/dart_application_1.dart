@@ -2,72 +2,66 @@ import 'dart:ffi';
 import 'init/staffmodel.dart';
 import 'init/user.dart';
 import 'init/user_service.dart';
+
 void main(List<String> arguments) {
-print(DateTime.now());
-var date=DateTime(2022,8,12);
-print("${date.year}-${date.month}-${date.day}");
-return;
-var church=Church('name','address');
+  print(DateTime.now());
+  var date = DateTime(2022, 8, 12);
+  print("${date.year}-${date.month}-${date.day}");
+  return;
+  var church = Church('name', 'address');
 
 //Synchronous
-var teachingStaff=TeachingStaffModel('');
-teachingStaff.name='';
-teachingStaff.getName();
+  var teachingStaff = TeachingStaffModel('');
+  teachingStaff.name = '';
+  teachingStaff.getName();
 
+  var nonstaff1 = NonTeachingStaffModel('');
+  var nonstaff2 = NonTeachingStaffModel.init('Staff Name');
 
+  delayForFiveSeveconds();
+  dontDelay();
+  seconddontDelay();
 
-var nonstaff1=NonTeachingStaffModel(''); 
-var nonstaff2=NonTeachingStaffModel.init('Staff Name');
+  User user = User("David", "onyeka@gmail.com", "5678hh", 90, IsDead: true);
+  user.Height = 90;
+  user.Weight = 10;
+  user.toWalk();
 
-
-delayForFiveSeveconds();
-dontDelay();
-seconddontDelay();
-
-
-
-
-User user=User("David","onyeka@gmail.com","5678hh",90,IsDead: true);
-user.Height=90;
-user.Weight=10;
-user.toWalk();
-
-var users=UserService.fetchAll();
-print(users);
-bool exists=UserService.checkIfUserExists(user.email);
-if(exists){
-  print("User already exists");
-}
-else{
-  UserService.addNewUser(user);
-  var users=UserService.fetchAll();
+  var users = UserService.fetchAll();
   print(users);
-  print("User Created Successfully");
+  bool exists = UserService.checkIfUserExists(user.email);
+  if (exists) {
+    print("User already exists");
+  } else {
+    UserService.addNewUser(user);
+    var users = UserService.fetchAll();
+    print(users);
+    print("User Created Successfully");
+  }
 }
 
-}
-void dontDelay(){
+void dontDelay() {
   print("I was not delayed");
 }
-void seconddontDelay(){
+
+void seconddontDelay() {
   print("I was not delayed");
 }
+
 Future delayForFiveSeveconds() async {
   await Future.delayed(Duration(seconds: 5));
   print('Hello i was delayed for 5s');
 }
 
-
-void sum(double param1, double param2, double param3){
-  print(param1+param2+param3);
+void sum(double param1, double param2, double param3) {
+  print(param1 + param2 + param3);
 }
 
-void methodName(){
+void methodName() {
   return;
 }
 
-void methodClass(){
-  
+void methodClass() {
 //Methods are functions or routines that performs a particular operation
 //Return Type - Data Type -Variable
 //Create a Method that will sum three values passed to it
@@ -75,43 +69,40 @@ void methodClass(){
 //Create a method that returns the sum of three values
 //Createa method that will return sum of two values multiplied by the third value
 
-  String variableName="";
-  LoginWithPin("ifeanyi@yahoo.com",pin: 46);
-  Login("ifeanyi@yahoo.com","paswword6789");
+  String variableName = "";
+  LoginWithPin("ifeanyi@yahoo.com", pin: 46);
+  Login("ifeanyi@yahoo.com", "paswword6789");
   sum(8, 9, 10);
 }
 
-void LoginWithPin(String email,{String password="",int pin=0}){
+void LoginWithPin(String email, {String password = "", int pin = 0}) {
   print("$email is logged In");
-  String loginProfile=LoginAndReturnProfile('ifeanyi@gmail.com', 1234);
+  String loginProfile = LoginAndReturnProfile('ifeanyi@gmail.com', 1234);
   print(loginProfile);
 }
 
-void Login(String email,String password){
+void Login(String email, String password) {
   print("$email is logged In");
-  String loginProfile=LoginAndReturnProfile('ifeanyi@gmail.com', 1234);
+  String loginProfile = LoginAndReturnProfile('ifeanyi@gmail.com', 1234);
   print(loginProfile);
 }
 
-String LoginAndReturnProfile(String email, int pin){
+String LoginAndReturnProfile(String email, int pin) {
   print("$email is logged In");
   return "David's Profile";
 }
 
-String GetProfile(String email, String password){
-    String name='Chimobi';
-    String exp_email="chimobo@gmail.com";
-    String xp_password="Mosco123";
+String GetProfile(String email, String password) {
+  String name = 'Chimobi';
+  String exp_email = "chimobo@gmail.com";
+  String xp_password = "Mosco123";
 
-
-    if(email==exp_email && password==xp_password){
-      return name;
-    }
-    else{
-        return "Login Error";
-    }
+  if (email == exp_email && password == xp_password) {
+    return name;
+  } else {
+    return "Login Error";
+  }
 }
-
 
 void Revision3() {
   //1. Hello World, I'm Dart Language
@@ -366,22 +357,22 @@ void Revision() {
   String testValue = 'Ifeanyi Nwachukwu';
   String email = 'onyakachi001@gmail.com';
   String email2 = 'INFO@TECHORIGIN.COM';
-  String dotnet='.net';
+  String dotnet = '.net';
   print(email.replaceAll('.com', dotnet));
-  print(email.replaceRange(5,9, 'firstfive'));
+  print(email.replaceRange(5, 9, 'firstfive'));
   // print(email2.contains('.com'));
   // print(email.contains('@'));
   // print(email2);
   // print(email2.toLowerCase());
-  String spacedText=' Odera';
-  String text='Odera';
-  print(spacedText.trimRight()==text);
+  String spacedText = ' Odera';
+  String text = 'Odera';
+  print(spacedText.trimRight() == text);
   print(text.indexOf('e'));
   print(spacedText[1]);
   print(spacedText.trim().startsWith('O'));
-  String newVariable=email.substring(5,10);
+  String newVariable = email.substring(5, 10);
   print('New Variable: $newVariable');
-  String currency='NGN';
+  String currency = 'NGN';
   double principal = 10000;
   print(principal);
   double rate = 5;
@@ -392,16 +383,14 @@ void Revision() {
 
   if (si > 10000) {
     print('High Interest Rate');
-  }
-  else if(si>5000 && si<10000){
+  } else if (si > 5000 && si < 10000) {
     print('Mid Interest Rate');
-  }
-  else{
+  } else {
     print('Low Interest Rate');
   }
 
-print(currency+si.toString());
-print('$currency$si');
+  print(currency + si.toString());
+  print('$currency$si');
   int daviDAge = 20;
   int onyekachiAge = 30;
   int joyAge = 40;
@@ -499,26 +488,18 @@ void classTwo() {
     print('value is invalid');
   }
 
-
 //loop classwork
 
-for (int i = 0; i < 10; i++) {
-  print(i);
-}
+  for (int i = 0; i < 10; i++) {
+    print(i);
+  }
 
-List<String> namess = [
-    "Chimaobim",
-    "David",
-    "Ebube"
-  ];
-for (var element in namess) {
-  print(element);
-}
-var items=namess.where((element) => element.startsWith('n'));
-print(items);
-
-
-
+  List<String> namess = ["Chimaobim", "David", "Ebube"];
+  for (var element in namess) {
+    print(element);
+  }
+  var items = namess.where((element) => element.startsWith('n'));
+  print(items);
 
   const int age = 55;
   //Age is between 0 - 9 - Child
@@ -606,7 +587,6 @@ print(items);
         if (ageGroup == AgeGroup.Child) {
           print('child');
         }
-
         break;
       case AgeGroup.Adolescent:
         // TODO: Handle this case.
@@ -645,6 +625,7 @@ void classOne() {
   Map<String, List<String>> map = {
     "address": ["Eneka", 'Rumuodara']
   };
+  Map<String, int> praise = {"Praise": 7};
   int xvalue = 90;
   int yvalue = 100;
   int zvalue = 70;
@@ -698,3 +679,64 @@ void classOne() {
 }
 
 enum AgeGroup { Child, Adolescent, Adult, Aged }
+
+
+Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        children: [
+                                          Text("1.", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                            child: Text("Hemoglobin A1C", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        children: [
+                                          Text("2.", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                            child: Text("Urinalysis", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Row(
+                                        children: [
+                                          Text("3.", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+                                            child: Text("Complete Blood Count.", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),),
+                                          )
+
+
+
+
+
+
+
+                                          Padding(
+                                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+                                            child: Icon(Icons.payments_outlined, size: 25, color: primaryColor,),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                                            child: Column(
+                                                children:[
+                                                  Text("Highest Paying Services", style: TextStyle(fontSize: 18, color: Colors.black),),
+                                                ]),
+                                          )
+                                        ],
+                                      ),
+                                    ),
